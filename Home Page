@@ -1,0 +1,1357 @@
+---
+carousel: true
+products:
+  featured:
+    limit: {{theme_settings.homepage_featured_products_count}}
+  new:
+    limit: {{theme_settings.homepage_new_products_count}}
+blog:
+  recent_posts:
+    limit: {{theme_settings.homepage_blog_posts_count}}
+    summary: 150
+---
+
+{{#partial "page"}}
+
+  {{#if shipping_messages}}
+    <div class="banners alert-banners">
+      {{#each shipping_messages}}
+        <div class="banner">
+          {{{message}}}
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{#if carousel}}
+    {{inject 'carouselDelay' carousel.swap_frequency}}
+    <!--{{> components/carousel}}-->
+
+
+
+
+
+    {{{region name="home_below_carousel"}}}
+  {{/if}}
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{#if customer}}
+    <!-- User is logged in, no popup needed -->
+{{else}}
+
+ 
+
+ <!--show the popup model-->
+  <div id="popupOverlayModelID">
+    <div id="popupBoxModelContent">
+        <div class="klaviyo-form-V5maKz"></div>
+        <button id="closePopup-button-class" onclick="closeModelPopup()">Close</button>
+    </div>
+</div>
+
+<!--popup model script-->
+<script>
+    
+    window.onload = function() {
+        document.getElementById('popupOverlayModelID').style.display = 'block';
+          
+    };
+
+   
+</script>
+
+<script>
+    function closeModelPopup() {
+        document.getElementById('popupOverlayModelID').style.display = 'none';
+    };
+</script>
+  
+    <!-- User is not logged in, show popup -->
+  
+{{/if}}
+
+
+
+
+
+  {{{snippet 'home_content'}}}
+
+  {{> components/product/products-new}}
+  {{> components/product/products-featured}}
+
+ 
+
+<!--chose color here-->
+<style>
+/*sweetalert2*/
+.swal2-html-container> h2,.swal2-html-container> h3 {
+   line-height: 0.5 !important;
+}
+    .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        .row1-col1:hover, .row1-col2:hover,
+        .row2-col1:hover, .row2-col2:hover,
+        .row3-col1:hover, .row3-col2:hover,
+        .row4-col1:hover, .row4-col2:hover,
+        .row5-col1:hover, .row5-col2:hover,
+        .row6-col1:hover, .row6-col2:hover,
+        .row7-col1:hover {
+             transform: scale(1);
+        }
+        .row1-col1, .row1-col2,
+        .row2-col1, .row2-col2,
+        .row3-col1, .row3-col2,
+        .row4-col1, .row4-col2,
+        .row5-col1, .row5-col2,
+        .row6-col1, .row6-col2,
+        .row7-col1 {
+           cursor: pointer;
+            padding: 50px;
+            text-align: start;
+            color:black;
+            text-decoration: underline;
+            font-weight: 800;
+        }
+        .row7-col1 {
+            grid-column: span 2;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .row7-col1 {
+                grid-column: span 1;
+            }
+        }
+        .row1-col1{
+            
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/1blackCar.webp');
+              /*background-size: 100% 100% ;*/
+              background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+           
+        }
+        .row1-col2{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/2blueCar.webp');
+               /*background-size: 100% 100% ;*/
+               background-position: center;
+               background-repeat: no-repeat;
+              background-size: cover;
+    
+        }
+        .row2-col1{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/3brownCar.webp');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+            
+        }
+        .row2-col2{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/4gold.webp');
+               background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+   
+            
+        }
+        .row3-col1{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/5paretCar.webp');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+   
+            
+        }
+        .row3-col2{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/6grayCar.webp');
+               background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+   
+            
+        }
+        .row4-col1{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/7OrangeCar.webp');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+  
+            
+        }
+        .row4-col2{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/8PinkCar.webp');
+               background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+    
+            
+        }
+        .row5-col1{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/9SilverCar.webp');
+              background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+    
+            
+        }
+        .row5-col2{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/10WhiteCar.webp');
+               background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+    
+            
+        }
+        .row6-col1{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/11YellowCar.webp');
+               background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+   
+            
+        }
+        .row6-col2{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/12PurpleCar.webp');
+             background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+    
+            
+        }
+        .row7-col1{
+            background-image: url('https://store-lvtkibdaaz.mybigcommerce.com/content/carGrids/13RedCar.webp');
+             background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; 
+  
+            
+        }
+      
+        .jy div{
+            width:100%;
+           height: 400px;  
+              padding: 50px !important;
+            text-align: start !important;
+            color:black;
+            text-decoration: underline;
+            font-weight: 800;
+            text-transform: uppercase !important;
+        }
+        .more{
+           
+               background-size: 100% !important;
+    background-position: center;
+           
+        }
+        .heading__title{
+            margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: Montserrat, sans-serif; 
+    font-weight: 600;
+    color: black;
+    font-style: normal;
+        }
+        @media (min-width:1300px){
+            .more,.slider-slide {
+                height:750px !important;
+            }
+        }
+       
+</style>
+
+
+<!--popup model style-->
+<style>
+    #popupOverlayModelID {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background-color: rgba(0, 0, 0, 0.5); */
+            z-index: 999; 
+        }
+
+        
+        #popupBoxModelContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /*width: 300px;*/
+            text-align: center;
+        }
+
+        
+        #closePopup-button-class {
+            cursor: pointer;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2c2c2e;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+</style>
+
+<div class="heading__content" bis_skin_checked="1">
+      <h2 class="heading__title h1" style="margin-top: 4.5rem;">CHOOSE YOUR COLOR</h2>
+  </div>
+     <div class="container jy">
+      <div class="row1-col1" onclick="location.href='/black/'">Black</div>
+       <div class="row1-col2" onclick="location.href='/blue/'">Blue</div>
+        
+       <div class="row2-col1" onclick="location.href='/brown/'">Brown</div>
+      <div class="row2-col2" onclick="location.href='/gold/'">Gold</div>
+        
+      <div class="row3-col1" onclick="location.href='/green/'">Green</div>
+      <div class="row3-col2" onclick="location.href='/gray/'">Gray</div>
+        
+        <div class="row4-col1" onclick="location.href='/orange/'">Orange</div>
+        <div class="row4-col2" onclick="location.href='/pink/'">Pink</div>
+        
+        <div class="row5-col1" onclick="location.href='/silver/'">Silver</div>
+        <div class="row5-col2" onclick="location.href='/white/'">White</div>
+        
+        <div class="row6-col1" onclick="location.href='/yellow/'">Yellow</div>
+        <div class="row6-col2" onclick="location.href='/purple/'">Purple</div>
+        
+        <div class="row7-col1 more" onclick="location.href='/red/'">Red</div>
+    </div>
+<!--chose color-->
+
+
+<!--second slider-->
+<style>
+    .divo {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+   
+    overflow: hidden;
+  
+  
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-slide {
+    min-width: 100%;
+    height:400px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.slider-slide img {
+    width: 100%;
+    object-fit: cover;
+    margin: -100px;
+   
+}
+
+.slide-text {
+   color: white;
+    font-size: 32px;
+    text-transform: capitalize;
+    font-family: "Open Sans";
+    
+}
+
+.slide-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+     border-radius: 40px;
+    background: #ffffff33;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #c9d6de;
+    transition: background-color 0.3s ease;
+    border: 2px solid #52616a !important;
+}
+
+.dot.active,.dot:hover {
+    background-color:black;
+}
+.divo{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.jj {
+
+    display: flex;
+    bottom: 50px;
+    right: 100px;
+    position: absolute;
+    z-index: 999999999999999999;
+    flex-direction: column;
+    align-items: flex-end;
+   gap:25px;
+}
+
+
+   </style>
+   
+  <div class="divo">
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <div class="slider-slide slide1">
+                <img src="https://store-lvtkibdaaz.mybigcommerce.com/content/secondcarosel/1car_4_11zon.webp" alt="Image 1">
+               <div class="jj">
+                   <div class="slide-text">GAL23-HD PINK GOLD</div>
+                <button class="apnabtn"  onclick="location.href='/pink-gold-gal23-hd-vinyl-wrap/'">Learn More <svg class="svg symbol symbol--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 6.6L17 8.1l3.2 3.2H.2v2h20L17 16.6l1.4 1.4 5.6-5.7z" style="fill: rgb(0, 0, 0);"></path></svg></button>
+               </div> 
+            </div>
+            <div class="slider-slide slide2">
+                <img src="https://store-lvtkibdaaz.mybigcommerce.com/content/secondcarosel/2car_5_11zon.webp" alt="Image 2">
+               <div class="jj">
+                   <div class="slide-text">HM12-HD SONOMA GREEN</div>
+                <button class="apnabtn"  onclick="location.href='/sonoma-green-hm12-hd-vinyl-wrap/'">Learn More <svg class="svg symbol symbol--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 6.6L17 8.1l3.2 3.2H.2v2h20L17 16.6l1.4 1.4 5.6-5.7z" style="fill: rgb(0, 0, 0);"></path></svg></button>
+               </div> 
+            </div>
+            <div class="slider-slide slide3">
+                <img src="https://store-lvtkibdaaz.mybigcommerce.com/content/secondcarosel/3car_6_11zon.webp" alt="Image 3">
+               <div class="jj">
+                   <div class="slide-text">DS04-HD AZURE MAYA BLUE</div>
+                <button class="apnabtn"  onclick="location.href='/azure-maya-blue-ds04-hd/'">Learn More <svg class="svg symbol symbol--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 6.6L17 8.1l3.2 3.2H.2v2h20L17 16.6l1.4 1.4 5.6-5.7z" style="fill: rgb(0, 0, 0);"></path></svg></button>
+               </div> 
+            </div>
+             <div class="slider-slide slide4">
+                <img src="https://store-lvtkibdaaz.mybigcommerce.com/content/secondcarosel/4car_7_11zon.webp" alt="Image 3">
+               <div class="jj">
+                   <div class="slide-text">SMT01 MINERAL GREY</div>
+                <button class="apnabtn" onclick="location.href='/mineral-grey-smt01-vinyl-wrap/'">Learn More <svg class="svg symbol symbol--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 6.6L17 8.1l3.2 3.2H.2v2h20L17 16.6l1.4 1.4 5.6-5.7z" style="fill: rgb(0, 0, 0);"></path></svg></button>
+               </div> 
+            </div>
+             <div class="slider-slide slide5">
+                <img src="https://store-lvtkibdaaz.mybigcommerce.com/content/secondcarosel/5car_8_11zon.webp" alt="Image 3">
+               <div class="jj">
+                   <div class="slide-text">CG48-HD SPANISH LAVENDER</div>
+                <button class="apnabtn" onclick="location.href='/spanish-lavender-cg48-hd-vinyl-wrap/'">Learn More <svg class="svg symbol symbol--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 6.6L17 8.1l3.2 3.2H.2v2h20L17 16.6l1.4 1.4 5.6-5.7z" style="fill: rgb(0, 0, 0);"></path></svg></button>
+               </div> 
+            </div>
+             <div class="slider-slide slide6">
+                <img src="https://store-lvtkibdaaz.mybigcommerce.com/content/secondcarosel/6car_9_11zon.webp" alt="Image 3">
+               <div class="jj">
+                   <div class="slide-text">CG45-HD AMBERWAVE</div>
+                <button class="apnabtn" onclick="location.href='/amberwave-cg45-hd-vinyl-wrap/'">Learn More <svg class="svg symbol symbol--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 6.6L17 8.1l3.2 3.2H.2v2h20L17 16.6l1.4 1.4 5.6-5.7z" style="fill: rgb(0, 0, 0);"></path></svg></button>
+               </div> 
+            </div>
+             <div class="slider-slide slide7">
+                <img src="https://store-lvtkibdaaz.mybigcommerce.com/content/secondcarosel/7car_10_11zon.webp" alt="Image 3">
+               <div class="jj">
+                   <div class="slide-text">RD16-HD IRIDESCENT GREEN</div>
+                <button class="apnabtn" onclick="location.href='/iridescent-green-rd16r-hd-vinyl-wrap/'">Learn More <svg class="svg symbol symbol--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 6.6L17 8.1l3.2 3.2H.2v2h20L17 16.6l1.4 1.4 5.6-5.7z" style="fill: rgb(0, 0, 0);"></path></svg></button>
+               </div> 
+            </div>
+            <div class="slider-slide slide8">
+                <img src="https://store-lvtkibdaaz.mybigcommerce.com/content/secondcarosel/8car_11_11zon.webp" alt="Image 3">
+               <div class="jj">
+                   <div class="slide-text">CG06-HD RACING RED</div>
+                <button class="apnabtn" onclick="location.href='/racing-red-cg06-hd-vinyl-wrap/'">Learn More <svg class="svg symbol symbol--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.4 6.6L17 8.1l3.2 3.2H.2v2h20L17 16.6l1.4 1.4 5.6-5.7z" style="fill: rgb(0, 0, 0);"></path></svg></button>
+               </div> 
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot dot1" onclick="moveToSlide(0)"></span>
+            <span class="dot dot2" onclick="moveToSlide(1)"></span>
+            <span class="dot dot3" onclick="moveToSlide(2)"></span>
+             <span class="dot dot4" onclick="moveToSlide(3)"></span>
+              <span class="dot dot5" onclick="moveToSlide(4)"></span>
+               <span class="dot dot6" onclick="moveToSlide(5)"></span>
+                <span class="dot dot7" onclick="moveToSlide(6)"></span>
+                 <span class="dot dot8" onclick="moveToSlide(7)"></span>
+        </div>
+    </div>
+</div>
+ <script>
+        let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slider-slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
+    }
+    
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentSlide].classList.add('active');
+}
+
+function moveToSlide(index) {
+    showSlide(index);
+}
+
+
+
+    </script>
+<!--seond slider end-->
+
+<!--chose your carfinish-->
+<style>
+    .container2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /*gap: 10px;*/
+    width: 100%;
+   
+}
+
+.container2 > div {
+ 
+  text-decoration: underline;
+    /*padding: 20px;*/
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-weight: 800;
+        background-size: 100% !important;
+    background-position: center !important;
+}
+.col1, .col2,.col3,.col4,.col5,.col6,.col7{
+    width:100%;
+   height: 345px;
+    cursor: pointer;
+}
+.col1 {
+    background-image: url('https://teckwrap.com/cdn/shop/files/387536792_281363261452944_1176370340929690507_n_860x.jpg?v=1696705477');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col2 {
+    background-image: url('https://teckwrap.com/cdn/shop/files/387327694_284107647883493_4897851558948657389_n_860x.jpg?v=1696705477');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col3 {
+    background-image: url('https://teckwrap.com/cdn/shop/files/384862068_842253090638585_5166397693663619208_n_860x.jpg?v=1696705477');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col4 {
+    background-image: url('https://teckwrap.com/cdn/shop/files/368440845_829888412252419_7824768446909045116_n_860x.jpg?v=1696705477');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col5 {
+    background-image: url('https://teckwrap.com/cdn/shop/files/387583329_859120569281321_5697865719714960689_n_860x.jpg?v=1696710521');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col6 {
+    background-image: url('https://teckwrap.com/cdn/shop/files/387323479_621871323489028_7365932461333044532_n_860x.jpg?v=1696710550');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col7 {
+    background-image: url('https://teckwrap.com/cdn/shop/files/387550581_239177982466467_5530272920924958031_n_860x.jpg?v=1696710593');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col8 {
+    background-image: url('https://teckwrap.com/cdn/shop/files/387512651_882858973354142_1840148383715594708_n_860x.jpg?v=1696710621');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+    }
+    .container-m {
+        display:block !important;
+    }
+}
+</style>
+<div class="heading__content" bis_skin_checked="1">
+      <h2 class="heading__title h1">CHOOSE YOUR COLOR</h2>
+  </div>
+<div class="container2">
+        <div class="row1 col1" onclick="location.href='/glose-vinyl-wrape/'">GLOSS METALLIC</div>
+        <div class="row1 col2" onclick="location.href='/super-gloss/'">SUPER GLOSS</div>
+        <div class="row1 col3" onclick="location.href='/deep-gloss/'">DEEP GLOSS</div>
+        <div class="row2 col4" onclick="location.href='/color-shift-vinyl/'">COLOR SHIFT</div>
+        <div class="row2 col5" onclick="location.href='/satin-vinyl-wrape/'">SATIN</div>
+        <div class="row2 col6" onclick="location.href='/matte-vinyl-wrap/'">MATTE</div>
+        <div class="row3 col7" onclick="location.href='/chrome-vinyl-wrap/'">CHROME</div>
+       <div class="row3 col8" onclick="location.href='/structure-vinyl-wrap/'">CARBON</div>
+        
+    </div>
+<!--chose your car finish end-->
+
+
+<!--testimonials-->
+  <style>
+        .testimonial-slider {
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial-slide {
+            display: none;
+            padding: 20px;
+            padding: 20px;
+    font-family: Times New Roman, Times, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 30px;
+        }
+        .testimonial-slide.active-slide {
+            display: block;
+        }
+        .testimonial-nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    width: 100%;
+    bottom: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+        }
+        .testimonial-nav a {
+            pointer-events: all;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .testimonial-nav a:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .author-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .author-info div {
+            text-align: left;
+        }
+    </style>
+ <div class="testimonial-slider">
+        <div class="testimonial-slide active-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/72357984_1754690701341855_790937142594371584_n_132x132_crop_center.jpg?v=1613772571" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Austin Vikdal</h3>
+                    <p>Sterlings Customs, US</p>
+                </div>
+            </div>
+            <p>We were probably the first ones to bring TeckWrap to Colorado with the stunning colors they offer. Then everyone in Colorado starting offering their colors! We love the film, it's a very easy film to work with and the customer service is on point. They're always there to help.</p>
+            <p>1 / 5</p>
+        </div>
+        <div class="testimonial-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/Dan-Roache_132x132_crop_center.jpg?v=1613772516" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Dan Roache</h3>
+                    <p>S6wraps, UK</p>
+                </div>
+            </div>
+            <p>We use TeckWrap very often at S6 Wraps, the material is very nice to use, conforms well and we have had no failings with it at all, the range of colours are amazing, they stand out like no other vinyl brand. We highly recommend !</p>
+            <p>2 / 5</p>
+        </div>
+        <div class="testimonial-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/tim_132x132_crop_center.jpg?v=1613772515" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Tim Bettis</h3>
+                    <p>Wrapcision, US</p>
+                </div>
+            </div>
+            <p>I have been wrapping for 18 years and have used almost every wrap film that is out there. I had a customer who really wanted to use True Blood on their BMW M3 so I ordered a roll. We were amazed at how well the film worked for us. It installed very easily and had an amazing rich finish. I have received more compliments on this car than any other car I have wrapped. I will definitely be using it again!</p>
+            <p>3/ 5</p>
+        </div>
+         <div class="testimonial-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/wrapzone_132x132_crop_center.jpg?v=1613772508" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Andreas</h3>
+                    <p>WrapZone, Sweden</p>
+                </div>
+            </div>
+            <p> Had the opportunity to test some stuff from TeckWrap, must say that it lays pretty nice and they have some cool colors, this is a shop car so it will be interesting to follow.</p>
+            <p>4/ 5</p>
+        </div>
+         <div class="testimonial-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/WechatIMG1961_132x132_crop_center.png?v=1680503518" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Damien Nguyen</h3>
+                    <p>Nguyen teint, France</p>
+                </div>
+            </div>
+            <p>I have been working with teckwrap for years, and I am pleased. The quality has improved over the years, and the team is attentive to its customers. For me, it is one of the best films on the market, an unequalled brilliance. And durability that no longer needs to be proven, and my customers are delighted.</p>
+            <p>5/ 5</p>
+        </div>
+        <!-- Add more slides as needed -->
+        <div class="testimonial-nav">
+            <a href="#" class="testimonial-prev">&#8592;</a>
+            <a href="#" class="testimonial-next">&#8594;</a>
+        </div>
+    </div>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let currentSlide = 0;
+            const slides = $('.testimonial-slide');
+            const totalSlides = slides.length;
+
+            function goToSlide(index) {
+                slides.removeClass('active-slide');
+                $(slides[index]).addClass('active-slide');
+                currentSlide = index;
+            }
+
+            $('.testimonial-next').on('click', function(e) {
+                e.preventDefault();
+                let nextSlide = (currentSlide + 1) % totalSlides;
+                goToSlide(nextSlide);
+            });
+
+            $('.testimonial-prev').on('click', function(e) {
+                e.preventDefault();
+                let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                goToSlide(prevSlide);
+            });
+        });
+    </script>
+<!--testimonials end-->
+
+<!--testimonial 2-->
+ <style>
+        .custom-slider {
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .custom-slide {
+            display: none;
+            padding: 20px;
+            font-family: Times New Roman, Times, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size:30px;
+        }
+        .custom-slide.active-slide {
+            display: block;
+        }
+        .custom-nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    width: 100%;
+    bottom: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+        .custom-nav a {
+            pointer-events: all;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .custom-nav a:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .author-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .author-info div {
+            text-align: left;
+        }
+        .author-info h3, .author-info p{
+            color:black;
+            font-size: 20px;
+        }
+    </style>
+ <div class="custom-slider">
+        <div class="custom-slide active-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/51652245_2154280167966210_3487245962378739712_n_132x132_crop_center.jpg?v=1613795689" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Bart Molemans</h3>
+                    <p>INSIGNITY, Belgium</p>
+                </div>
+            </div>
+            <p>The many colors always convince our customers. Fine processing and durability. Keep on going! The many colors always convince our customers. Fine processing and durability. Keep on going!</p>
+            <p>1 / 7</p>
+        </div>
+        <div class="custom-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/248700547_2318291744974021_8133334551414811644_n_132x132_crop_center.jpg?v=1680016865" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Kainy Rufenacht</h3>
+                    <p>LHDK Customs Sàrl, Switzerland</p>
+                </div>
+            </div>
+            <p>We love working with Teckwrap, the films are of very good quality with lots of beautiful colors. The after sales service is fantastic. Our customers are very satisfied with the shine of the films.</p>
+            <p>2 / 7</p>
+        </div>
+        <div class="custom-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/wclogo2_132x132_crop_center.jpg?v=1614302204" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Corey England</h3>
+                    <p>Wrap Capital, UK</p>
+                </div>
+            </div>
+            <p> We have been using TeckWrap for 3 years now and have never had a problem... understand and work with the material correctly and it’ll love you. The colours are great, the finish is truly premium and always surpasses expectations, both from the customer and installer. Customer service is second to none, and we have never experienced such great sales support from any other brand of vinyl.</p>
+            <p>3/ 7</p>
+        </div>
+        <div class="custom-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/04343_132x132_crop_center.png?v=1614302204" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Justin Pate</h3>
+                    <p>The Wrap Institute, US</p>
+                </div>
+            </div>
+            <p> The Wrap Institute has made 10 product videos for TeckWrap.  Its been great to see them develop their product line over the years to make it easier to install and offer a wide variety of interesting colors and finishes.</p>
+            <p>4/ 7</p>
+        </div>
+        <div class="custom-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/tadashi_132x132_crop_center.jpg?v=1613772649" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Tadashi Kariya</h3>
+                    <p>Tadashi Kariya</p>
+                </div>
+            </div>
+            <p> I use TeckWrap for race cars wrappings. TeckWrap has really nice deep colors and I specially recommend Gloss Vinyl Series.TeckWrap surface is very strong against scratches and hard to get dirty compare to other brands. Once you know how to handle TeckWrap vinyl, its very good. It’s important that you learn how to install TeckWrap.</p>
+            <p>5/ 7</p>
+        </div>
+        <div class="custom-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/Spiller_132x132_crop_center.jpg?v=1613772603" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Spiller Pierre</h3>
+                    <p>BREIT "N" BLECH Wrapping, GermanyK</p>
+                </div>
+            </div>
+            <p> We have been working with TeckWrap products for quite some time and we are very satisfied. The foils can be processed very well and removed again. The color selection is great, and we look forward to continuing to work well together with TeckWrap and also on new colors!</p>
+            <p>6/ 7</p>
+        </div>
+        <div class="custom-slide">
+            <div class="author-info">
+                <img src="https://teckwrap.com/cdn/shop/files/inked_logo_132x132_crop_center.jpg?v=1613772591" alt="Wrap Institute Logo">
+                <div>
+                    <h3>Mark Unland</h3>
+                    <p>Inked Vinyl, US</p>
+                </div>
+            </div>
+            <p> We’ve been using the product for awhile now and we are very happy with the product. We have added it to our color choice in the office for our clients. Even added the color sample wall.</p>
+            <p>7/ 7</p>
+        </div>
+        <!-- Add more slides as needed -->
+        <div class="custom-nav"> 
+            <a href="#" class="custom-prev">&#8592;</a>
+            <a href="#" class="custom-next">&#8594;</a>
+        </div>
+    </div>
+      <script>
+        $(document).ready(function() {
+            let currentSlide = 0;
+            const slides = $('.custom-slide');
+            const totalSlides = slides.length;
+
+            function goToSlide(index) {
+                slides.removeClass('active-slide');
+                $(slides[index]).addClass('active-slide');
+                currentSlide = index;
+            }
+
+            $('.custom-next').on('click', function(e) {
+                e.preventDefault();
+                let nextSlide = (currentSlide + 1) % totalSlides;
+                goToSlide(nextSlide);
+            });
+
+            $('.custom-prev').on('click', function(e) {
+                e.preventDefault();
+                let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                goToSlide(prevSlide);
+            });
+        });
+    </script>
+<!--testimonial 2-->
+
+<!--sdd to cart function-->
+<style>
+.container-m {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.carousel-m {
+    flex: 1;
+    padding: 10px;
+}
+
+.carousel-image-m {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.product-details-m {
+    flex: 1;
+    padding: 10px;
+}
+
+.product-title-m {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-price-m {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.quantity-selector-m {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quantity-btn-m {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    cursor: pointer;
+}
+
+#quantity-m {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    pointer-events: none;
+}
+
+.add-to-cart-btn-m, .paypal-btn-m {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn-m {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.paypal-btn-m {
+    background-color: #ffc439;
+    color: black;
+}
+
+.shipping-info-m, .product-info-m {
+    margin: 20px 0;
+}
+
+.carousel-m {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slides-m {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image-m {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-dots-m {
+    text-align: center;
+    margin-top: 10px;
+       padding: 5px;
+     border-radius: 40px;
+    background: #ffffff33;
+}
+
+.carousel-dot-m {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+  
+    border-radius: 50%;
+  
+    cursor: pointer;
+  background: #c9d6de;
+    transition: background-color 0.3s ease;
+    border: 2px solid #52616a !important;
+}
+
+.carousel-dot-m.active {
+    background-color: #717171;
+}
+.custom-nav-1{
+   display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    position: absolute;
+    width: 96%;
+    top:50%;
+    transform: translateY(-50%);
+   font-weight: 800;
+   font-size: 25px;
+
+}
+.apnac{
+    display:flex;
+    gap:10px;
+}
+   </style>
+   <div class="heading__content" bis_skin_checked="1">
+      <h2 class="heading__title h1">START WITH ORDERING SAMPLES</h2>
+  </div>
+ <div class="container-m">
+        <div class="carousel-m">
+    <div class="carousel-slides-m">
+        <img src="https://teckwrap.com/cdn/shop/files/IMG_9870_1600x.jpg?v=1685391029" alt="Product Image 1" class="carousel-image-m active">
+        <img src="https://teckwrap.com/cdn/shop/files/IMG_9865_1600x.jpg?v=1685391029" alt="Product Image 2" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/files/IMG_9872_1600x.jpg?v=1685391029" alt="Product Image 3" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/files/IMG_9919_1600x.jpg?v=1685391029" alt="Product Image 3" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/products/teckwrap-samples-teckwrap-color-swatches-2023-tw-s-2023-vinyl-wrap-craft-film-car-wraps-31748225106031_1600x.jpg?v=1685391029" alt="Product Image 3" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/files/IMG_9915-1_1600x.jpg?v=1685391029" alt="Product Image 3" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/files/IMG_9915-2_1600x.jpg?v=1685391029" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/files/IMG_9915_1600x.jpg?v=1685391029" alt="Product Image 3" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/products/teckwrap-samples-teckwrap-color-swatches-2023-ppf-samples-tw-s-2023-vinyl-wrap-craft-film-car-wraps-32032543768687_1600x.jpg?v=1685391029" alt="Product Image 3" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/products/teckwrap-samples-teckwrap-color-swatches-2023-ppf-samples-tw-s-2023-vinyl-wrap-craft-film-car-wraps-32032544030831_1600x.jpg?v=1685391029" alt="Product Image 3" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/files/DSC_7692_1600x.jpg?v=1685348983" alt="Product Image 3" class="carousel-image-m">
+        <img src="https://teckwrap.com/cdn/shop/files/DSC_7690_1600x.jpg?v=1685348983" alt="Product Image 3" class="carousel-image-m">
+        <!-- Add more images as needed -->
+    </div>
+    
+    <!-- Navigation buttons -->
+ <div class="custom-nav-1">
+    <a class="carousel-prev-btn-m custom-prev" onclick="moveSlide(-1)">&#8592;</a>
+    <a class="carousel-next-btn-m custom-next" onclick="moveSlide(1)">&#8594;</a>
+    </div>
+    <!-- Dots for slide indicators -->
+    <div class="carousel-dots-m">
+        <span class="carousel-dot-m active" onclick="currentSlide(1)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(2)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(3)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(4)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(5)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(6)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(7)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(8)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(9)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(10)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(11)"></span>
+        <span class="carousel-dot-m" onclick="currentSlide(12)"></span>
+        <!-- Add more dots corresponding to each image -->
+    </div>
+</div>
+
+        <div class="product-details-m">
+            <h1 class="product-title-m">TeckWrap Color Swatches 2023</h1>
+            <p class="product-price-m">£35.00</p>
+            
+            <div class="apnac">
+            <span class="form-field-quantity-control" data-quantity-control="{{id}}">
+  <input
+  style="height:100%; color:black; border:1px solid black;"
+    id="quantity"
+    class="form-input"
+    type="number"
+    name="qty{{#if product_id}}-{{id}}{{else}}[]{{/if}}"
+    pattern="[0-9]*"
+    value="{{#if quantity}}{{quantity}}{{else}}{{#if min_purchase_quantity}}{{min_purchase_quantity}}{{else}}1{{/if}}{{/if}}"
+    min="{{#if min_purchase_quantity}}{{min_purchase_quantity}}{{else}}0{{/if}}"
+    {{#if max_purchase_quantity}}max="{{max_purchase_quantity}}"{{/if}}
+    data-quantity-control-input
+  >
+  <span class="quantity-control quantity-decrement" data-quantity-control-action="decrement" onclick="decreaseQuantity()">
+    <svg width="8" height="8" xmlns="http://www.w3.org/2000/svg">
+      <g fill-rule="evenodd" fill="currentColor">
+        <path d="m0,3l8,0l0,2l-8,0l0,-2z"/>
+      </g>
+    </svg>
+  </span>
+  <span class="quantity-control quantity-increment" data-quantity-control-action="increment" onclick="increaseQuantity()">
+    <svg width="8" height="8" xmlns="http://www.w3.org/2000/svg">
+      <g fill="currentColor" fill-rule="evenodd">
+        <path d="m5,3l0,-3l-2,0l0,3l-3,0l0,2l3,0l0,3l2,0l0,-3l3,0l0,-2l-3,0l0,0z" id="minus"/>
+      </g>
+    </svg>
+  </span>
+</span>
+
+<script>
+    function decreaseQuantity() {
+        var quantity = document.getElementById('quantity').value;
+        if (quantity > 1) {
+            document.getElementById('quantity').value = --quantity;
+        }
+    }
+
+    function increaseQuantity() {
+        var quantity = document.getElementById('quantity').value;
+        document.getElementById('quantity').value = ++quantity;
+    }
+    $(document).ready(function() {
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function showSlides(n) {
+        var slides = $('.carousel-image-m');
+        var dots = $('.carousel-dot-m');
+        
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        
+        slides.hide().removeClass('active');
+        dots.removeClass('active');
+        
+        $(slides[slideIndex - 1]).show().addClass('active');
+        $(dots[slideIndex - 1]).addClass('active');
+    }
+    
+    function moveSlide(n) {
+        showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    
+    $('.carousel-prev-btn-m').click(function() {
+        moveSlide(-1);
+    });
+    
+    $('.carousel-next-btn-m').click(function() {
+        moveSlide(1);
+    });
+    
+    $('.carousel-dot-m').click(function() {
+        var dotIndex = $(this).index() + 1;
+        currentSlide(dotIndex);
+    });
+});
+
+</script>
+
+
+ <style>
+     .ad{
+     margin:unset;
+     background: black;
+     padding: 1em 2em;
+     border-radius: unset;
+     }
+     .paypal-btn-m{
+         margin-top:10px;
+         background: #1990c6;
+         padding: 1em 2em;
+         border-radius: unset;
+     }
+ </style>         
+            
+            
+            
+            <a href="/teckwrap-color-swatches-2023/" class="add-to-cart-btn-m ad" >Add to cart</a>
+        </div>
+            <button class="paypal-btn-m">Buy with PayPal</button>
+            <p class="shipping-info-m">The price includes worldwide shipping costs.</p>
+            <p class="product-info-m">There are four color books in the set and 196 vinyl wrap samples. Plus a pack of PPF samples (4 sheets).</p>
+        </div>
+    </div>
+<style>
+    @media (max-width:700px){
+        .slider-slide{
+            height: 250px;
+        }
+        .slide-tex{
+            font-size:25px;
+        }
+        .custom-slide{
+            font-size: 25px;
+        }
+        .testimonial-slide{
+            font-size: 20px !important;
+        }
+        .testimonial-nav{
+            bottom:0px;
+        }
+        .custom-nav{
+            bottom:0px;
+        }
+    }
+    @media (max-width:600px){
+        .jy div{
+            height: 300px !important;
+        }
+        .slide-tex{
+            font-size:15px;
+        }
+        .more{
+            height: 350px !important;
+        }
+         .custom-nav{
+            bottom:0px;
+        }
+        .custom-slide{
+             font-size:15px;
+        }
+    }
+    
+  @media (max-width:700px){
+    .btn-b{
+      margin-bottom:10px !important;
+    }
+  }
+   @media (max-width: 400px) {
+    .jy div {
+        height: 250px !important;
+    }
+    .jj>.slide-text,.slide-text, .author-info h3,.author-info p {
+        font-size:15px;
+    }
+   .testimonial-nav a:hover,.custom-nav a:hover {
+       background-color: transparent !important;
+        color:black !important;
+    }
+    .more{
+        height: 205px !important;
+    }
+        .slider-slide img {
+        height: 100% !important;
+        margin: 0px !important;
+    }
+}
+@media (min-width: 990px) and (max-width: 1300px) {
+    .jy div:not(.more) {
+        height: 260px !important;
+    }
+}
+@media (max-width:521px){
+    .slider-slide img {
+   
+    margin: -20px;
+    
+}
+}
+</style>
+<!--add to cart-->
+
+
+ {{> components/blog/recent-posts}}
+{{/partial}}
+
+{{> layout/base}}
